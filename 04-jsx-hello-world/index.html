@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSX Hello World</title>
+  </head>
+
+  <body>
+    <!-- для создания html TAG use to "" , DOM Element-->
+    <div id="app"></div>
+    <!-- 1) create interface for users -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- 2) component rendering with real DOM or for mobile app - React Native-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+      // code must be after library
+      //                                            type props children
+      const helloWorldHeading = <h1>Hello form React</h1> // не является часть JSX - index.html:21 Uncaught SyntaxError: Unexpected token '<' (at index.html:21:33)
+
+      console.log(helloWorldHeading) // object
+
+      const container = document.getElementById('app') // for js use to '' - помещаем в контейнер <div id="app"></div>
+      const root = ReactDOM.createRoot(container) // (точка монитирования -- корневой элемент) монтируем компонент в HMTL страницу спомощью  ReactDOM
+      root.render(helloWorldHeading) // and component rendering
+    </script>
+  </body>
+</html>
