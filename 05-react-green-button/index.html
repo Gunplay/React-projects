@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JSX Hello World</title>
+    <title>React JSX Green Button</title>
+    <style>
+      .app {
+        text-align: center;
+      }
+      .green-btn {
+        color: white;
+        background-color: green;
+        font-size: 60px;
+      }
+    </style>
   </head>
 
   <body>
@@ -20,18 +30,30 @@
       // Трансформация кода для браузера  ype="text/babel"
       // code must be after library
       //                                            type props children
-      const helloWorldHeading = <h1>Hello form React</h1> // не является часть JSX - index.html:21 Uncaught SyntaxError: Unexpected token '<' (at index.html:21:33)
+      //   const helloWorldHeading = <h1>Hello form React</h1> // не является часть JSX - index.html:21 Uncaught SyntaxError: Unexpected token '<' (at index.html:21:33)
       // требуется транспиллер Babel для трансформации кода в JS!!!!!!!!!!!!!!!!!!!!!
       // const helloWorldHeading = /*#__PURE__*/ React.createElement(
       //   'h1',
       //   null,
       //   'Hello form React'
       // ) //- JS
-      console.log(helloWorldHeading) // object
+      //   console.log(helloWorldHeading) // object
+
+      const App = (
+        <div class="app">
+          <button
+            id="my-button"
+            class="btn"
+            onclick="changeButton('my-button')"
+          >
+            Click me
+          </button>
+        </div>
+      )
 
       const container = document.getElementById('app') // for js use to '' - помещаем в контейнер <div id="app"></div>
       const root = ReactDOM.createRoot(container) // (точка монитирования -- корневой элемент) монтируем компонент в HMTL страницу спомощью  ReactDOM
-      root.render(helloWorldHeading) // and component rendering
+      root.render(App) // and component rendering
     </script>
   </body>
 </html>
