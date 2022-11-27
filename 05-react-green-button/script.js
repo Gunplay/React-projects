@@ -12,16 +12,23 @@
      
 // Func component
       const App = () => {
-        console.log('Called'); 
-        let buttonText = 'Click me please'
+        // console.log('Called');
+//             1) первое состояние useState         внешняя функция
+        const [buttonText, setButtonText] = React.useState('Click me') // function with side effect
+        console.log(buttonText)
+        const [classesList, setClassesList] = React.useState('')
+
         const onButtonClick = ()=> {
-            buttonText = 'Hello from React'
-            console.log(buttonText)
+//            2) 2е состояние setState
+            setButtonText(`Hello from React, ${Math.random()}`);
+            setClassesList('green-btn');
+           
         };
 // вызов функции идёт однократно console.log('Called'); Что бы изменилось значение buttonText - надо вызвать функцию ещё раз
         return (
             <div className="app">
-              <button onClick={onButtonClick}>
+
+              <button className = {classesList} onClick={onButtonClick}>
                 {buttonText}
                 </button>
             </div>
