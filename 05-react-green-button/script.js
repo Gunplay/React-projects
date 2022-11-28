@@ -10,17 +10,19 @@
       // ) //- JS
       //   console.log(helloWorldHeading) // object
      
-// Func component
-      const App = () => {
+// Func component и даём ему свойство <App buttonText = "Click me"/> или использовать деструктуризацию
+      const App = ({initialButtonText, initialClassesList}) => {
+        console.log(initialButtonText);
+        // const {initialButtonText} = props
         // console.log('Called');
 //             1) первое состояние useState         внешняя функция
-        const [buttonText, setButtonText] = React.useState('Click me') // function with side effect
+        const [buttonText, setButtonText] = React.useState(initialButtonText) // function with side effect
         console.log(buttonText)
-        const [classesList, setClassesList] = React.useState('')
+        const [classesList, setClassesList] = React.useState(initialClassesList);
 
         const onButtonClick = ()=> {
 //            2) 2е состояние setState
-            setButtonText(`Hello from React, ${Math.random()}`);
+            setButtonText('Hello from React');
             setClassesList('green-btn');
            
         };
@@ -38,4 +40,4 @@
 
       const container = document.getElementById('app') // for js use to '' - помещаем в контейнер <div id="app"></div>
       const root = ReactDOM.createRoot(container) // (точка монитирования -- корневой элемент) монтируем компонент в HMTL страницу спомощью  ReactDOM
-      root.render(<App />) // and component rendering + JSX + пользователький компонет с большой буквы (div and button - встроенный компонент)
+      root.render(<App initialButtonText = "Click me" initialClassesList =""/>) // and component rendering + JSX + пользователький компонет с большой буквы (div and button - встроенный компонент)
