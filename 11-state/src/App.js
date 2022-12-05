@@ -4,7 +4,7 @@ import RandomNumber from './componets/RandomNumber';
 function App() {
   return (
   <div className="App">
-    <RandomNumber/>
+    <RandomNumber maxNum = {1000}/>
   </div>
   )
 }
