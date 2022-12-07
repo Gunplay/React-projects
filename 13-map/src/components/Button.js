@@ -1,6 +1,6 @@
-function Button({onClick, text}) {
+function Button({onClick, sign}) {
     console.log('Button rendered')
-    return <button onClick={onClick}>{text}</button>
+    return <button onClick={onClick}>{sign}</button>
 }
 
 export default Button

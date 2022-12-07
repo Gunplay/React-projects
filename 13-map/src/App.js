@@ -4,7 +4,7 @@ import './App.css';
 import Button from './components/Button';
 import Counter from './components/Counter';
 
-const conditionals = ['+', '-', '/', '*']
+const signs = ['+', '-', '/', '*', 'Press me', 'Click me']
 
 function App() {
   console.log('App rendered');
@@ -21,10 +21,23 @@ function App() {
     и мы можем влиять спомощью свойства из дочернего компонента на изменение состояния в род компоненте 
     спомощью свойства*/}
     <Counter count = {count}/>
-    <Button onClick={incrementCount} text={conditionals[0]}/>
-    <Button onClick={dicrementCount} text={conditionals[1]}/>
-    <Button onClick={setCount} text={conditionals[2]}/>
-    <Button onClick={setCount} text={conditionals[3]}/>
+    {signs.map((sign, index) => {
+      console.log(sign);
+      console.log(index)
+     return <Button onClick={incrementCount} sign={sign} key={index}/>
+    })}
+    {/* {[
+      <Button onClick={incrementCount } text={signs[0]}/>,
+      <Button onClick={incrementCount } text={signs[1]}/>,
+      <Button onClick={incrementCount } text={signs[2]}/>,
+      <Button onClick={incrementCount } text={signs[3]}/>,
+      <Button onClick={incrementCount } text={signs[4]}/>,
+      <Button onClick={incrementCount } text={signs[5]}/>
+    ]} */}
+    {/* <Button onClick={incrementCount} text={signs[0]}/>
+    <Button onClick={dicrementCount} text={signs[1]}/>
+    <Button onClick={setCount} text={signs[2]}/>
+    <Button onClick={setCount} text={signs[3]}/> */}
   </div>
   
 }
