@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form name="my">
+      <input type="text" name="one" value="1" />
+      <input type="text" name="two" value="2" />
+
+      <input type="radio" name="age" value="10" />
+      <input type="radio" name="age" value="20" />
+    </form>
+
+    <script>
+      let form = document.forms.my
+      console.log(form)
+
+      let elem = form.elements.one.value
+      console.log(elem)
+
+      let elemTypeRadio = form.elements.age
+      //   let elemTypeRadio = form.age
+
+      console.log(elemTypeRadio[0])
+    </script>
+
+    <select id="select">
+      <option value="apple">Яблоко</option>
+      <option value="pear">Груша</option>
+      <option value="banana">Банан</option>
+    </select>
+
+    <script>
+      // все три строки делают одно и то же
+      select.options[1].selected = true
+      select.selectedIndex = 1
+      select.value = 'pear'
+    </script>
+
+    <script>
+      const text = 'foo'
+      console.log(Array.from(text))
+    </script> -->
+    <!-- <form>
+      <input type="text" onchange="alert(this.value)" />
+    </form>
+
+    <input type="text" onchange="alert(this.value)" />
+    <input type="button" value="Button" /> -->
+
+    <!-- <input type="text" id="input" /> oninput:
+    <span id="result"></span>
+    <script>
+      input.oninput = function () {
+        result.innerHTML = input.value
+      }
+    </script> -->
+
+    <!-- Метод: submit
+Чтобы отправить форму на сервер вручную, мы можем вызвать метод form.submit().
+
+При этом событие submit не генерируется. Предполагается, что если программист вызывает метод form.submit(), то он уже выполнил всю соответствующую обработку.
+
+Иногда это используют для генерации формы и отправки её вручную, например так: -->
+    <form>
+      <button type="submit" onClick="googleTest()">PUSH</button>
+    </form>
+    <script>
+      const googleTest = () => {
+        let form = document.createElement('form')
+        form.action = 'https://google.com/search'
+        form.method = 'GET'
+
+        form.innerHTML = '<input name="q" value="test">'
+
+        // перед отправкой формы, её нужно вставить в документ
+        document.body.append(form)
+      }
+    </script>
+  </body>
+</html>

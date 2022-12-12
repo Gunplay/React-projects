@@ -6,12 +6,16 @@ const Login = () => {
 
   function handleFormSubmit(event) {
     event.preventDefault()
+    console.log(event.target.username)
     // console.log(event.target.username.value)
     // console.log(event.target.password.value)
 
+    // if (userData.username !== userData.username.)
     const userData = {
-      username: event.target.username.value,
-      password: event.target.password.value,
+      // username: event.target.username.value,
+      // password: event.target.password.value,
+      username,
+      password,
     }
     alert(JSON.stringify(userData))
     console.log(userData)
@@ -27,7 +31,7 @@ const Login = () => {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            name="username"
+            // name="username" - controlled use to useState and setState
           ></input>
         </label>
         <label>
@@ -36,7 +40,7 @@ const Login = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            name="password"
+            // name="password"
           ></input>
         </label>
         <button type="submit">Login</button>
