@@ -9,6 +9,7 @@ function Wrapper(props) {
   }
 
   return (
+    // <div style={{backgroundColor: props.color}}>
     <div style={style}>
       {/* <h1>Hello from Wrapper</h1> */}
       {props.children}
