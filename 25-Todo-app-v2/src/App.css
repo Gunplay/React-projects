@@ -6,3 +6,13 @@ h1 {
   font-size: 3.2rem;
   margin-bottom: 40px;
 }
+
+.deleteAllTodo {
+  background-color: whitesmoke;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+.deleteAllTodo:hover {
+  background-color: orangered;
+}

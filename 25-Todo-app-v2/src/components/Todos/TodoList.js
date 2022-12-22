@@ -1,7 +1,7 @@
 import Todo from './Todo'
 import styles from './TodoList.module.css'
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos, deleteTodo, toggleTodo }) {
   // const {todos} = props
   //   return (
   //     <>
@@ -25,7 +25,12 @@ function TodoList({ todos, deleteTodo }) {
         <h2 style={{ color: 'white' }}>ToDo list is empty</h2>
       ) : (
         todos.map((todo) => (
-          <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} />
+          <Todo
+            key={todo.id}
+            todo={todo}
+            deleteTodo={deleteTodo}
+            toggleTodo={toggleTodo}
+          />
         ))
       )}
     </div>

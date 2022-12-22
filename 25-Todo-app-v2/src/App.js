@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid' // generation uniq key (npm i uuid)
+import { FcRefresh } from 'react-icons/fc'
 import './App.css'
 import TodoForm from './components/Todos/TodoForm'
 import TodoList from './components/Todos/TodoList'
@@ -26,13 +27,34 @@ function App() {
     // filter оставляет все, которые не совпали с выбранным index
     setTodos(todos.filter((todo) => todo.id != id))
   }
+  // Создаём функцию toggle toggleTodoHandler, так как компонет App знает состояние Todo and TodoList
+  // и так можно будет добовлять новые кнопки, на пример удаление всех todo and completed
 
+  const toggleTodoHandler = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        return todo.id === id
+          ? // Разбаваем объект todo - на props
+            { ...todo, isCompleted: !todo.isCompleted }
+          : { ...todo } // мы не копируем объект, а создаём новый оьъект (объект это ссылочный)
+      })
+    )
+
+    const deleteAllTodo = () => {
+      todos && setTodos('')
+    }
+  }
   return (
     <div className="App">
       <h1>Todo App</h1>
       {/* Передаем функцию в TodoForm */}
       <TodoForm addTodo={addTodoHandler} />
-      <TodoList todos={todos} deleteTodo={deleteTodoHandler} />
+      <FcRefresh className="deleteAllTodo" />
+      <TodoList
+        todos={todos}
+        deleteTodo={deleteTodoHandler}
+        toggleTodo={toggleTodoHandler}
+      />
     </div>
   )
 }
