@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid' // generation uniq key (npm i uuid)
-import { FcRefresh } from 'react-icons/fc'
 import './App.css'
 import TodoForm from './components/Todos/TodoForm'
 import TodoList from './components/Todos/TodoList'
+import TodosActions from './components/Todos/TodosActions'
 
 function App() {
   // массив строк, скоро передеалю на массив объктов
@@ -39,17 +39,25 @@ function App() {
           : { ...todo } // мы не копируем объект, а создаём новый оьъект (объект это ссылочный)
       })
     )
-
-    const deleteAllTodo = () => {
-      todos && setTodos('')
-    }
   }
+
+  const resetTodosHandler = () => {
+    setTodos([])
+  }
+
+  const deleteCompletedTodoHandler = () => {
+    setTodos(todos.filter((todo) => todo.isCompleted === !true)) //false
+  }
+
   return (
     <div className="App">
       <h1>Todo App</h1>
       {/* Передаем функцию в TodoForm */}
       <TodoForm addTodo={addTodoHandler} />
-      <FcRefresh className="deleteAllTodo" />
+      <TodosActions
+        resetTodos={resetTodosHandler}
+        deleteCompletedTodos={deleteCompletedTodoHandler}
+      />
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
