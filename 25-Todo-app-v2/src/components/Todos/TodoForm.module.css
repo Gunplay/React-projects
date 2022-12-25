@@ -17,19 +17,3 @@
   border: 3px solid black;
   border-radius: 8px;
 }
-
-.todoFormContainer button {
-  padding: 10px 15px;
-  margin-left: 15px;
-  font-size: 30px;
-  background-color: black;
-  color: white;
-  border: 3px solid dark;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.todoFormContainer button:hover {
-  background-color: white;
-  color: orange;
-}

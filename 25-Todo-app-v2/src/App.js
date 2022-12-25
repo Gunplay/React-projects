@@ -49,7 +49,7 @@ function App() {
     setTodos(todos.filter((todo) => todo.isCompleted === !true)) //false
   }
 
-  const completedTodosCount = todos.filter((todo) => todo.isCompleted).length
+  let completedTodosCount = todos.filter((todo) => todo.isCompleted).length
   console.log(completedTodosCount)
 
   return (
@@ -71,6 +71,11 @@ function App() {
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHandler}
       />
+      {completedTodosCount > 0 && (
+        <h2>{`You have completed ${completedTodosCount} ${
+          completedTodosCount > 1 ? 'todos' : 'todo'
+        }`}</h2>
+      )}
     </div>
   )
 }

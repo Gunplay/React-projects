@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './TodoForm.module.css'
+import Button from '../UI/Button'
 
 console.log(styles)
 
@@ -37,8 +38,10 @@ function TodoForm({ addTodo }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
         ></input>
-
-        <button type="Submit">Submit</button>
+        {/* Отдельные свойства для кнопки в form!!!! {...spread}*/}
+        <Button type="Submit" title="Submit">
+          Submit
+        </Button>
       </form>
     </div>
   )

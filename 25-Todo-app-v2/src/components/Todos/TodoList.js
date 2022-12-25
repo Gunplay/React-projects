@@ -22,7 +22,9 @@ function TodoList({ todos, deleteTodo, toggleTodo }) {
       ))} */}
 
       {!todos.length ? (
-        <h2 style={{ color: 'white' }}>ToDo list is empty</h2>
+        <h2 style={{ color: 'black', fontSize: '1.8rem' }}>
+          ToDo list is empty
+        </h2>
       ) : (
         todos.map((todo) => (
           <Todo
