@@ -1,6 +1,29 @@
+* {
+  text-decoration: none;
+}
 .App {
   text-align: center;
 }
+
+/*Used by default with NavLink*/
+.active {
+  color: white;
+  background-color: black;
+  border-radius: 10%;
+  border: 3px solid white;
+  padding: 10px;
+  transition: 800ms;
+}
+
+/* .activeLink {
+  color: white;
+  background-color: black;
+  border-radius: 10%;
+  border: 3px solid white;
+  padding: 10px;
+  transition: 800ms;
+} */
+
 a {
   color: lightblue;
   font-size: 35px;
