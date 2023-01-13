@@ -13,6 +13,7 @@
   border: 3px solid white;
   padding: 10px;
   transition: 800ms;
+  text-decoration: none;
 }
 
 /* .activeLink {
