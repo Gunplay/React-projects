@@ -1,17 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import courses from '../data/courses'
 
 const Courses = () => {
   return (
-    <>
+    <div>
     <h1>Courses</h1>
     {courses.map((course) => (
-      <div key={course.id}>
-        <Link to={course.slug} className="courseLink">{course.title}</Link>
+      <div style={{backgroundColor: 'darkslategray', transition: '7000ms'}}key={course.id}>
+      <NavLink to={course.slug} className="courseLink">
+        <div>{course.title}</div>
+      </NavLink>
       </div>
     ))}
-    </>
+    </div>
   )
 }
 
