@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <>
     <Menu/>
-    
+   
     {/* About Contacts display on Outlet */}
     <Outlet/>
     </>

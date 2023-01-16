@@ -25,6 +25,12 @@
   transition: 800ms;
 } */
 
+.courseLink {
+  font-size: 25px;
+}
+.courseLink:hover {
+  color: yellow;
+}
 a {
   color: lightblue;
   font-size: 35px;

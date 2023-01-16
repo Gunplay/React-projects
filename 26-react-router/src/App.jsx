@@ -4,11 +4,13 @@ import { Contacts } from './components/Contacts'
 import Home from './components/Home'
 import { NotFound } from './components/NotFound'
 import MainLayout from './layouts/MainLayout'
-import './App.css'
 import Courses from './components/Courses'
 import SingleCourse from './components/SingleCourse'
+import './App.css'
+
 
 function App() {
+  
   return (
     <BrowserRouter>
       <div className="App">
@@ -19,7 +21,7 @@ function App() {
               <Route path="about" element={<About/>} />
               <Route path="contacts" element={<Contacts/>} />
               {/* end turn off .active */}
-              <Route path="courses/" element={<Courses/>}/>
+              <Route path="courses/" element={<Courses />}/>
               <Route path="courses/:slug" element={<SingleCourse/>}/>
               <Route path="*" element={<NotFound/> }/>
           </Route>
