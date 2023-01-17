@@ -19,6 +19,11 @@ const courses = [
     slug: 'node-js',
     id: 361,
   },
+  {
+    title: 'Complete Rust Guide',
+    slug: 'rust',
+    id: 32,
+  },
 ]
 
 export default courses
