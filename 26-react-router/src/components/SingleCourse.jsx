@@ -7,8 +7,9 @@ const SingleCourse = () => {
   // <Route path="courses/:courseSlug" element={<SingleCourse/>} param which avalible from path/>
  const params = useParams()
  const navigate = useNavigate()
+//  console.log(navigate)
  const course = courses.find((course) => course.slug === params.courseSlug)
- console.log(params)
+//  console.log(params)
 
   useEffect(() => {
     if (!course) {
