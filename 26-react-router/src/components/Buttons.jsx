@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react'
 import queryString from 'query-string'
 import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import Courses from './Courses'
 import courses from '../data/courses'
 import { useState } from 'react'
 
 // const buttons = ['Tittle', 'slug', 'id']
-const Buttons = ({sortedCourses, key, sortCourses, sortKey}) => {
+const Buttons = ({sortedCourses, sortCourses, setSortedCourses}) => {
     
-    const [sortBy, setSortBy] = useState(sortCourses(courses, sortKey))
-    console.log(sortBy)
+    
+   
 
     const location = useLocation()
     const param = useParams()
@@ -34,18 +33,24 @@ const Buttons = ({sortedCourses, key, sortCourses, sortKey}) => {
         <button value="title" onClick={(e)=> {
          { if (e.target.value === 'title') {
           navigate('?sort=title', {relative: 'path'})
-           return setSortBy(sortBy.sort((a, b) => (a[key] > b[key] ? 1 : -1)))
+           return setSortedCourses(sortCourses(courses, e.target.value))
          }
           }
         }}>Title</button>
         <button value="slug" onClick={(e)=> {
          { if (e.target.value === 'slug') {
           navigate('?sort=slug', {relative: 'path'})
-           return setSortBy(sortBy.sort((a, b) => (a[key] > b[key] ? 1 : -1)))
+           return setSortedCourses(sortCourses(courses, e.target.value))
          }
           }
         }}>Slug</button>
-        <button value="id" onClick={(e)=> console.log(e.target.value)}>ID</button>
+        <button value="id" onClick={(e)=> {
+         { if (e.target.value === 'id') {
+          navigate('?sort=id', {relative: 'path'})
+           return setSortedCourses(sortCourses(courses, e.target.value))
+         }
+          }
+        }}>ID</button>
         </div>
     </div>
   )
