@@ -7,7 +7,7 @@ import Buttons from './Buttons'
 
 const SORT_KEYS = ['title', 'slug', 'id']
 
-function sortCourses(courses, key) {
+const sortCourses =(courses, key) => {
   const sortedCourses = [...courses]
   if (!key || !SORT_KEYS.includes(key)) {
    return sortedCourses
@@ -31,16 +31,16 @@ const Courses = () => {
   // console.log(sortKey) // courses?sort=slug
   const [sortedCourses, setSortedCourses] = useState(sortCourses(courses, sortKey))
 
-  useEffect(() => {
-      if (!SORT_KEYS.includes(sortKey)) {
-        navigate('.')
-        setSortKey() // для того что бы рендер не делался два раза, обнуляем ключи undefined
-        setSortedCourses([...courses]) // Возвращаем в оригинальное состояние,если не сортируем!
-      }
-  }, [sortKey, navigate])
+  // useEffect(() => {
+  //     if (!SORT_KEYS.includes(sortKey)) {
+  //       navigate('.')
+  //       setSortKey() // для того что бы рендер не делался два раза, обнуляем ключи undefined
+  //       setSortedCourses([...courses]) // Возвращаем в оригинальное состояние,если не сортируем!
+  //     }
+  // }, [sortKey, navigate])
   return (
     <div>
-      <Buttons sortCourses={sortCourses}/>
+      <Buttons sortedCourses={sortedCourses} key={sortKey} sortCourses={sortCourses} sortKey={sortKey}/>
       <h1>
    {sortKey ? `Sorted Course by ${sortKey}`: 'Courses'}
       </h1>
