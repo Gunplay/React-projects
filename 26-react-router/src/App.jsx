@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, redirect, Navigate } from 'react-router-dom'
 import About from './components/About'
 import { Contacts } from './components/Contacts'
 import Home from './components/Home'
@@ -23,7 +23,7 @@ function App() {
               {/* end turn off .active */}
               <Route path="courses/" element={<Courses />}/>
               <Route path="courses/:courseSlug" element={<SingleCourse/>}/>
-              <Route path="*" element={<NotFound/> }/>
+              <Route path="*" element={<Navigate to="/" replace></Navigate> }/>
           </Route>
         </Routes>
       </div>

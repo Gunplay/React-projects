@@ -14,8 +14,9 @@ const sortCourses =(courses, key) => {
   }
 
   // так как метод sort ожидает числового значения, а не boolean added ? 'true' : 'false'
-  sortedCourses.sort((a, b) => (a[key] > b[key] ? 1 : -1))
-  return sortedCourses
+  return sortedCourses.sort((a, b) => (a[key] > b[key] ? 1 : -1))
+  // return sortedCourses.sort()
+  
 }
 
 const Courses = () => {
@@ -24,7 +25,7 @@ const Courses = () => {
   // console.log(location)
   // convert in the object from string
   const query = queryString.parse(location.search)
-  // console.log(query)
+
   const navigate = useNavigate()
   const [sortKey, setSortKey] = useState(query.sort)
   console.log(query.sort)
@@ -41,14 +42,14 @@ const Courses = () => {
   // }, [sortKey, navigate])
   return (
     <div>
-      <Buttons sortedCourses={sortedCourses}  sortCourses={sortCourses} setSortedCourses={setSortedCourses}/>
+      <Buttons sortedCourses={sortedCourses}  sortCourses={sortCourses} setSortedCourses={setSortedCourses} setSortKey={setSortKey}/>
       <h1>
    {sortKey ? `Sorted Course by ${sortKey}`: 'Courses'}
       </h1>
     {sortedCourses.map((course) => (
       <div style={{backgroundColor: 'darkslategray', transition: '7000ms'}}key={course.id}>
       <NavLink to={course.slug} className="courseLink">
-        <div>{course.title}, {course.slug}, {course.id}</div>
+        <div>{course.title} - {course.slug} - {course.id}</div>
       </NavLink>
       </div>
     ))}

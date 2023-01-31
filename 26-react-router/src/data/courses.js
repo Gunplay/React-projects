@@ -21,7 +21,7 @@ const courses = [
   },
   {
     title: 'Complete Rust Guide',
-    slug: 'rust',
+    slug: 'C++',
     id: 32,
   },
 ]
